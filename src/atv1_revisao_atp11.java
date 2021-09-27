@@ -5,6 +5,7 @@ public class atv1_revisao_atp11{
         
     Scanner sc = new Scanner(System.in);
     byte opcao;
+    char continua = 'N';
 
     do{
             System.out.println("\n************ Bradesco Financiamentos **************");
@@ -17,19 +18,31 @@ public class atv1_revisao_atp11{
                     System.out.println("Opção digitada: Crédito Pessoal");
                 break;
                 case 2:
-                    System.out.println("Opção digitada: Crédito Imobiliário");
+                    System.out.println("Opção digitada: Crédito Imobiliário.\n");
                 break;
                 case 3:
-                    System.out.println("Opção digitada: Crédito Empresarial");
+                    System.out.println("Opção digitada: Crédito Empresarial.\n");
                 break;
                 case 4:
-                    System.out.println("Opção digitada: Empréstimo Consignado");
+                    System.out.println("Opção digitada: Empréstimo Consignado.\n");
                 break;
                 default:
-                    System.out.println("O número digitado não esta entre as opções previstas");
+                    System.out.println("\tO número digitado não esta entre as opções previstas.");
                 break; 
             }
-        }while(opcao < 1 || opcao > 4);
+
+            if(opcao > 0 && opcao < 5 ){
+                do{
+                    System.out.print("Para voltar digite V e para sair digite S: ");
+                    continua = sc.nextLine().toUpperCase().charAt(0); 
+                                                           
+                }while(continua!='V' && continua!='S');
+
+                char S = 's';
+                System.out.println("\tAplicação finalizada! Obrigada e até a próxima!\n");
+            }
+
+        }while(opcao < 1 || opcao > 4 || continua =='V');
 
         sc.close();
     }
