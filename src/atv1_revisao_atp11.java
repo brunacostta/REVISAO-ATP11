@@ -6,8 +6,8 @@ public class atv1_revisao_atp11{
     Scanner sc = new Scanner(System.in);
     byte opcao;
 
-    System.out.println("\n************ Bradesco Financiamentos **************");
-    
+    do{
+            System.out.println("\n************ Bradesco Financiamentos **************");
             System.out.println("\t|1| Crédito Pessoal    |2| Crédito Imobiliário    |3| Crédito Empresarial    |4| Empréstimo Consignado");
             System.out.print("Digite uma opção: ");
             opcao = Byte.parseByte(sc.nextLine());
@@ -28,7 +28,9 @@ public class atv1_revisao_atp11{
                 default:
                     System.out.println("O número digitado não esta entre as opções previstas");
                 break; 
-
             }
+        }while(opcao < 1 || opcao > 4);
+
+        sc.close();
     }
 }
